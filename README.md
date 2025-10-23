@@ -25,22 +25,24 @@ bun server.ts # HTTP server for testing
 
 ### 🐍 Python Template (`python-mcp/`)
 
-A Python-based MCP implementation with multi-tool agent capabilities:
+A clean, production-ready template connecting Google ADK agents to MCP servers:
 
-- **Multi-Tool Agent**: Extensible agent framework
-- **Google ADK Integration**: Built on Google's Agent Development Kit
-- **ChromaDB Support**: Vector database for semantic search
-- **Web & API Interfaces**: Both web UI and REST API
-- **Modern Python**: Uses UV for dependency management
+- **MCP Server**: FastMCP server with ChromaDB semantic search
+- **ADK Agent**: Google ADK agent that consumes MCP tools
+- **Semantic Search**: Vector-based document search with ChromaDB
+- **Clean Structure**: Organized in `src/` with clear separation
+- **Production Ready**: STDIO and HTTP transport support
 
 **Quick Start:**
 ```bash
 cd python-mcp
 uv sync
-uv run seed
-adk web  # Web interface
-# or
-adk server  # API server
+
+# Terminal 1: Start MCP server
+python src/server.py
+
+# Terminal 2: Run agent example
+python main.py
 ```
 
 ## Getting Started
@@ -66,9 +68,9 @@ Both templates can be integrated with MCP-compatible clients. Configure your cli
 **Python:**
 ```json
 {
-  "command": "uv",
-  "args": ["run", "python", "-m", "multi-tool-agent"],
-  "cwd": "/path/to/python-mcp"
+  "command": "python",
+  "args": ["src/server.py"],
+  "cwd": "/path/to/mcp-template/python-mcp"
 }
 ```
 
@@ -77,12 +79,13 @@ Both templates can be integrated with MCP-compatible clients. Configure your cli
 | Feature | TypeScript | Python |
 |---------|------------|--------|
 | Runtime | Bun | Python 3.10+ |
-| Dependencies | Minimal | Google ADK + ChromaDB |
-| Setup Complexity | Simple | Moderate |
+| Framework | Custom | FastMCP + Google ADK |
+| Dependencies | Minimal | FastMCP + ChromaDB |
+| Setup Complexity | Simple | Simple |
 | Vector Search | No | Yes (ChromaDB) |
-| Web Interface | No | Yes |
-| HTTP API | Yes | Yes |
-| Tool Framework | Custom | Google ADK |
+| Transport | STDIO | STDIO + HTTP |
+| Agent Integration | N/A | Google ADK |
+| Architecture | Direct | MCP Client-Server |
 
 ## Contributing
 

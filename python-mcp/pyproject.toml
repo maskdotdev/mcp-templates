@@ -8,4 +8,7 @@ dependencies = [
     "google-adk>=1.16.0",
     "litellm>=1.78.6",
     "chromadb>=0.4.22",
+    "fastmcp>=2.0.0",
+    "nest-asyncio>=1.5.0",
+    "python-dotenv>=1.1.1",
 ]

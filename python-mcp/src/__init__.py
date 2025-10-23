@@ -1,0 +1,2 @@
+"""MCP Template - Source code."""
+

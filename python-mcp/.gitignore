@@ -19,20 +19,17 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+MANIFEST
 
 # Virtual environments
 venv/
 env/
 ENV/
-.venv/
+.venv
+.python-version
 
-# uv
-.uv/
-uv.lock
-
-# ChromaDB data
-data/chroma/
-*.db
+# ChromaDB
+chroma_db/
 
 # IDE
 .vscode/
@@ -40,14 +37,27 @@ data/chroma/
 *.swp
 *.swo
 *~
+.project
+.pydevproject
+.settings/
 
 # OS
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
 Thumbs.db
 
 # Logs
 *.log
+logs/
 
-# Config (if you want to keep sensitive configs local)
-# config.json
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
 
+# UV
+.uv/
